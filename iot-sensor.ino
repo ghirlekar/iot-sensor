@@ -1,3 +1,20 @@
+/*
+*
+* ESP8266 ESP-12 Pin Connections
+*
+* VCC - 3.3V
+* GPIO13 - DATA pin on DHT11 sensor
+* CH_PD - HIGH
+* REST - Active low signal to reset the ESP
+* TXD - RXD of FTDI cable 
+* RXD - TXD of FTDI cable
+* GPIO0 - HIGH in normal operations, LOW and reset to flash memory over UART then HIGH and reset to boot from flash
+* GPIO2 - HIGH
+* GPIO15/MTDO - LOW
+* GND - GND
+*
+*/
+
 #include <DHT.h>
 #include <PubSubClient.h>
 #include <ESP8266WiFi.h>
@@ -6,7 +23,7 @@
 const char* ssid = "...";
 const char* password = "...";
 
-const char* server = "broker.mqtt-dashboard.com";
+const char* server = "broker.mqttdashboard.com";
 const int port = 1883;
 
 const char* deviceID = "0xff12";
